@@ -28,7 +28,7 @@ class ProductResponse(BaseModel):
     category_id: Optional[int]
     owner_id: int
 
-    class Config: 
+    class Config:
         from_attributes = True
 
 class LowStockAlert(BaseModel):

@@ -7,7 +7,7 @@ class StockMovementCreate(BaseModel):
     quantity: int
     reason: Optional[str] = None
 
-class StockMovmentResponse(BaseModel):
+class StockMovementResponse(BaseModel):
     id: int
     quantity: int
     movement_type: MovementType
