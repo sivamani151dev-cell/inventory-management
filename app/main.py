@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from app.database import engine, Base
 from app.routers import auth, categories, products, stock
+from fastapi.responses import RedirectResponse
 import logging
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
@@ -21,4 +22,4 @@ app.include_router(stock.router)
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to Inventory Management System! 📦", "docs": "http://localhost:8000/docs"}
+    return RedirectResponse(url="/docs")
